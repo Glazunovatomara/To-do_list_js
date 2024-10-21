@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css"/>
+    <title>to-do list</title>
+</head>
+<body>
+    <main class="main">
+        <h1 class="main__title">to-do list</h1>
+        <h2 class="main__subtitle">Добавить задачу</h2>
+        <section class="main__section">
+            <input type="text" class="main__section_input" id="input" placeholder="зачада">
+            <input type="button" value="добавить" class="main__section_btn" id="submit"/>
+        </section>
+        <h2 class="main__subtitle">Список задач</h2>
+        <section class="main__section">
+            <p class="main__section_text" id="text">нет задач</p>
+            <div id="tasks">
+                <template class="main__section_template">
+                    <div class="main__section_template-info">
+                        <label for="" class="label-checkbox">
+                            <input type="checkbox" name="" id="">
+                        </label>
+                    </div>
+                </template>
+            </div>
+            <input type="button" value="очистить список задач" class="main__section_btn" id="clear"/>
+        </section>
+        
+        
+    </main>
+    <script src="./assets/script/script.js"></script>
+</body>
+</html>
