@@ -4,7 +4,7 @@ const clearButton = document.getElementById('clear')
 
 let tasks = [];
 const listTasks = document.getElementById('tasks')
-const template = document.querySelector('.main__section_template');
+const template = document.querySelector('.template');
 
 let div = document.createElement('div');
 div.className = 'task_str';
@@ -27,6 +27,8 @@ const TasksList = () => {
             document.getElementById('text').style.display = 'none';
 
             clearButton.disabled = false;
+
+            clearButton.classList.remove('btn-disabled');
         }
     } 
 }
@@ -51,18 +53,20 @@ const addTask = () => {
     if (inputValue === '') {
         return
     } 
-
+    
     if(tasks === null) {
         tasks = [];
         setLocalStorage()
         addTasksList()
         input.value = '';
         clearButton.disabled = false;
+        clearButton.classList.remove('btn-disabled');
     } else {
         setLocalStorage()
         addTasksList()
         input.value = '';
         clearButton.disabled = false;
+        clearButton.classList.remove('btn-disabled');
     }
 };
 inputButton.addEventListener('click', addTask);
@@ -79,6 +83,8 @@ const clearTasks = () => {
 
     document.getElementById('text').style.display = '';
     clearButton.disabled = true;
+    clearButton.className += " btn-disabled";
+    location.reload()
 }
 
 clearButton.addEventListener('click', clearTasks);

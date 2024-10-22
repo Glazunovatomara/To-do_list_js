@@ -8,26 +8,26 @@
 </head>
 <body>
     <main class="main">
-        <h1 class="main__title">to-do list</h1>
-        <h2 class="main__subtitle">Добавить задачу</h2>
-        <section class="main__section">
-            <form action="">
-                <input type="text" class="main__section_input" id="input" placeholder="зачада">
-                <button type="submit" class="main__section_btn" id="submit">добавить</button>
-            </form>
+        <h1 class="main-title">to-do list</h1>
+        <section class="main-section">
+            <h2 class="main-section__subtitle">Добавить задачу</h2>
+            <div class="main-section__div">
+                <input type="text" class="main-section__div-input" id="input" placeholder="зачада">
+                <button type="submit" class="main-section__btn" id="submit">добавить</button>
+            </div>
         </section>
-        <h2 class="main__subtitle">Список задач</h2>
-        <section class="main__section">
-            <p class="main__section_text" id="text">нет задач</p>
+        <section class="main-section">
+            <h2 class="main-section__subtitle">Список задач</h2>
+            <p class="main-section__text" id="text">нет задач</p>
             <div id="tasks">
-                <template class="main__section_template">
-                    <div class="main__section_template-info">
+                <template class="template">
+                    <div class="template-info">
                         <label class="label-checkbox"></label>
-                        <input type="checkbox" name="task" id="">
+                        <input type="checkbox" name="task" id="" class="checkbox">
                     </div>
                 </template>
             </div>
-            <input type="button" value="очистить список задач" class="main__section_btn" id="clear" disabled/>
+            <input type="button" value="очистить список задач" class="main-section__btn btn-disabled " id="clear" disabled/>
         </section>
         
         
