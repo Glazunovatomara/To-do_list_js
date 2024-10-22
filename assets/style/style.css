@@ -11,8 +11,8 @@
 }
 .main-title {
     text-align: center;
-    text-transform: uppercase;
 }
+.main-title ,
 .main-section__subtitle {
     text-transform: uppercase;
     color: #15853c;
@@ -41,6 +41,9 @@
 .main-section__div-input::placeholder,
 .main-section__text {
     color: #15853c88;
+}
+.main-section__text {
+    text-align: center;
 }
 .main-section__div-input:hover,
 .main-section__div-input:focus {
@@ -80,7 +83,22 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 10px;
 }
 input[type='checkbox'] {
+    accent-color: #15853c;
     cursor: pointer;
+}
+
+.label-checkbox {
+    color: #15853c;
+}
+.template-info {
+    padding: 5px 10px;
+    border: 1px solid #15853c;
+    border-radius: 6px;
+}
+.main-section__btn-area {
+    display: flex;
+    justify-content: end;
 }
