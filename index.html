@@ -11,8 +11,10 @@
         <h1 class="main__title">to-do list</h1>
         <h2 class="main__subtitle">Добавить задачу</h2>
         <section class="main__section">
-            <input type="text" class="main__section_input" id="input" placeholder="зачада">
-            <input type="button" value="добавить" class="main__section_btn" id="submit"/>
+            <form action="">
+                <input type="text" class="main__section_input" id="input" placeholder="зачада">
+                <button type="submit" class="main__section_btn" id="submit">добавить</button>
+            </form>
         </section>
         <h2 class="main__subtitle">Список задач</h2>
         <section class="main__section">
@@ -20,13 +22,12 @@
             <div id="tasks">
                 <template class="main__section_template">
                     <div class="main__section_template-info">
-                        <label for="" class="label-checkbox">
-                            <input type="checkbox" name="" id="">
-                        </label>
+                        <label class="label-checkbox"></label>
+                        <input type="checkbox" name="task" id="">
                     </div>
                 </template>
             </div>
-            <input type="button" value="очистить список задач" class="main__section_btn" id="clear"/>
+            <input type="button" value="очистить список задач" class="main__section_btn" id="clear" disabled/>
         </section>
         
         

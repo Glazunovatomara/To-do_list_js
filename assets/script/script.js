@@ -1,26 +1,47 @@
 const input = document.getElementById('input')
 const inputButton = document.getElementById('submit')
 const clearButton = document.getElementById('clear')
-//const strText = document.getElementById('text')
-
-const addTasksList = () => {
-    const listTasks = document.getElementById('tasks')
-    const template = document.querySelector('.main__section_template');
-    
-    const item = template.content.cloneNode(true)  // Клонируем содержимое тега <template>
-    item.querySelector('label').textContent = input.value;
-    item.querySelector('.main__section_template-info').className += ' task_str';
-    listTasks.append(item)
-
-    input.value = '';
-}
-
 
 let tasks = [];
+const listTasks = document.getElementById('tasks')
+const template = document.querySelector('.main__section_template');
+
+let div = document.createElement('div');
+div.className = 'task_str';
+listTasks.prepend(div)
+
+const TasksList = () => {
+    tasks = JSON.parse(localStorage.getItem("task"));
+
+    if(tasks === null) {
+        tasks = [];
+    }
+    
+    if (tasks.length >= 1) {
+        for(let task of tasks) {
+
+            const item = template.content.cloneNode(true);
+            item.querySelector('label').textContent = task;
+            div.append(item)
+
+            document.getElementById('text').style.display = 'none';
+
+            clearButton.disabled = false;
+        }
+    } 
+}
+TasksList()
+
+const addTasksList = () => {
+    const item = template.content.cloneNode(true)  // Клонируем содержимое тега <template>
+    item.querySelector('label').textContent = input.value;
+    div.append(item)
+}
+
 let setLocalStorage = () => {
     tasks.push(input.value);
-    localStorage.setItem( "task", JSON.stringify(tasks))
 
+    localStorage.setItem( "task", JSON.stringify(tasks))
     document.getElementById('text').style.display = 'none';
 }
 
@@ -28,35 +49,42 @@ let setLocalStorage = () => {
 const addTask = () => {
     let inputValue = input.value;
     if (inputValue === '') {
-        console.log(`поле не заполнено`) // подумать что написать
         return
     } 
 
-    const tasks = JSON.parse(localStorage.getItem("task"))
-    if(tasks === '') {
+    if(tasks === null) {
         tasks = [];
         setLocalStorage()
         addTasksList()
+        input.value = '';
+        clearButton.disabled = false;
     } else {
         setLocalStorage()
         addTasksList()
+        input.value = '';
+        clearButton.disabled = false;
     }
 };
+inputButton.addEventListener('click', addTask);
 
-inputButton.addEventListener('click', addTask)
+//очистка списка
 
-//очистка списка 
 const clearTasks = () => {
     tasks = [];
     localStorage.clear("task");
 
     const taskLink = document.querySelector('.task_str');
+
     taskLink.remove()
-};
-clearButton.addEventListener('click', clearTasks)
+
+    document.getElementById('text').style.display = '';
+    clearButton.disabled = true;
+}
+
+clearButton.addEventListener('click', clearTasks);
 
 //Когда задач нет, должно быть серое уведомление о том, что задачи отсутствуют, а кнопка «Очистить список» должна быть неактивна
 
 //При добавлении задачи в список, каждая из них должна появляться в списке задач и напротив иметь неактивный чекбокс, а кнопка «Очистить список» должна быть активна
 
-//Каждый чекбокс напротив задачи должен менять своё состояние при клике (говоря нам, что задача выполнена)
+//+Каждый чекбокс напротив задачи должен менять своё состояние при клике - говоря нам, что задача выполнена
