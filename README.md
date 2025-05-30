@@ -10,7 +10,7 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 ## Команда проекта
-[![Contributors](https://contrib.rocks/image?repo=Glazunovatomara/w-18)]
+![Contributors](https://contrib.rocks/image?repo=Glazunovatomara/w-18)
 [Томара](https://github.com/Glazunovatomara)
 
 ## Результат
