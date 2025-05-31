@@ -89,8 +89,12 @@ const clearTasks = () => {
 
 clearButton.addEventListener('click', clearTasks);
 
-//Когда задач нет, должно быть серое уведомление о том, что задачи отсутствуют, а кнопка «Очистить список» должна быть неактивна
-
-//При добавлении задачи в список, каждая из них должна появляться в списке задач и напротив иметь неактивный чекбокс, а кнопка «Очистить список» должна быть активна
-
-//+Каждый чекбокс напротив задачи должен менять своё состояние при клике - говоря нам, что задача выполнена
+//изменение checkbox и текста задачи
+listTasks.addEventListener('click', function(event) {
+    if(event.target.classList.contains('template-info')) {
+        let checkbox = event.target.querySelector('.checkbox');
+        checkbox.checked = !checkbox.checked;
+        
+        event.target.querySelector('.label-checkbox').classList.toggle('active');
+    }
+})

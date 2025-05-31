@@ -29,6 +29,7 @@
 .main-section__div {
     display: inline-flex;
     justify-content: space-between;
+    gap: 10px;
 
 }
 .main-section__div-input {
@@ -85,7 +86,8 @@
     gap: 10px;
     margin-bottom: 10px;
 }
-input[type='checkbox'] {
+
+.checkbox:checked {
     accent-color: #15853c;
     cursor: pointer;
 }
@@ -97,6 +99,10 @@ input[type='checkbox'] {
     padding: 5px 10px;
     border: 1px solid #15853c;
     border-radius: 6px;
+}
+.active {
+    color: #15853c91;
+    text-decoration: line-through;
 }
 .main-section__btn-area {
     display: flex;
