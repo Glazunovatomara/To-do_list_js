@@ -33,4 +33,4 @@
 
 ## Результат
 
-[Перейти на сайт](glazunovatomara.github.io/w-18/) 👈
+[Перейти на сайт](glazunovatomara.github.io/To-do_list_js/) 👈
