@@ -16,9 +16,8 @@
 
 ## Команда проекта
 
-![Contributors](https://contrib.rocks/image?repo=Glazunovatomara/w-18)
 [Томара](https://github.com/Glazunovatomara)
 
 ## Результат
 
-[Потестить](glazunovatomara.github.io/w-18/) 👈
+[Перейти на сайт](glazunovatomara.github.io/w-18/) 👈
