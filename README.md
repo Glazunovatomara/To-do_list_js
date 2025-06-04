@@ -29,7 +29,7 @@
 
 ## Команда проекта
 
-[Томара](https://github.com/Glazunovatomara)
+[Томара](https://github.com/Glazunovatomara) ✍️
 
 ## Результат
 
